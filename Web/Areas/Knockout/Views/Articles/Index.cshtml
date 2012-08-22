@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+
+
+
+@Html.Partial("ArticlePartial")   
+
+
+
+
+@section Javascript
+{ 
+    <script src="/Scripts/knockout-2.1.0.debug.js" type="text/javascript"></script>
+    @Assets.Script(scriptFile: "ArticlePartial.js", area: "Knockout")   
+}
+ 

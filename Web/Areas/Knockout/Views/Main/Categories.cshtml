@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Categories";
+}
+
+<h2>Categories</h2>
+
+@Html.Partial("CategoryPartial")   
+
+
+
+
+@section Javascript
+{
+    
+    <script src="../../Scripts/knockout-2.1.0.debug.js" type="text/javascript"></script>
+    @Assets.Script(scriptFile: "CategoryPartial.js", area: "Knockout")   
+}
+
+
+
+
+
+
+
+

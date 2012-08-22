@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Both";
+}
+ 
+
+<h2>Category</h2>
+@Html.Partial("CategoryPartial") 
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+<h2>Tasks</h2>
+@Html.Partial("TaskPartial") 
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+<h2>Tags</h2>
+@Html.Partial("TagPartial")  
+<br/>
+<br/>
+<br/>
+<br/> 
+
+
+
+
+
+@section Javascript
+{ 
+    <script src="../../Scripts/knockout-2.1.0.debug.js" type="text/javascript"></script> 
+    @Assets.Script(scriptFile: "CategoryPartial.js", area: "Knockout")  
+    @Assets.Script(scriptFile: "TaskPartial.js", area: "Knockout") 
+    <script src="http://ajax.microsoft.com/ajax/jquery.ui/1.8.5/jquery-ui.js" type="text/javascript"></script> 
+    @Assets.Script(scriptFile: "TagPartial.js", area: "Knockout")   
+
+}
+ 
+@section Head
+{ 
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/themes/base/jquery-ui.css"> 
+}

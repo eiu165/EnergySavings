@@ -1,0 +1,19 @@
+﻿
+
+<div id="ArticlePartial" style="min-height: 100px">
+ 
+
+    <ul data-bind="foreach: articles, visible: articles().length > 0">
+        <li>  
+            <label  data-bind="text: name" ></label> 
+            <a data-bind="attr: {'href':  '/Knockout/Main/Tags/' + $data.id()}, text: 'tags' "></a>
+            <a href="#" data-bind="click: $parent.deleteArticle , visible: $data.id() > 1 ">delete</a> 
+
+        </li>
+    </ul>
+     
+      
+    <button data-bind="click: load">Reload</button>
+
+
+</div>

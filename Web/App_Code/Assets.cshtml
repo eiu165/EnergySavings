@@ -1,0 +1,56 @@
+﻿@helper CSS(string cssFile, string media = "screen")
+{
+    <link rel="stylesheet" href="/Content/@cssFile" type="text/css" media="@media" />
+}
+@helper Image(string imageFile, string cssClass, string extraContent = " ")
+{
+    <img src = "/Content/Images/@imageFile" class="@cssClass" @extraContent />
+}
+@helper ImageLink(string link, string imageFile)
+{
+    <a href="@link">
+        @Assets.Image(imageFile, string.Empty)
+    </a>
+}
+@helper Templates()
+{
+    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
+}
+@helper Backbone()
+{
+    @Assets.Script("underscore-min.js")
+    @Assets.Script("backbone-min.js")
+}
+
+
+@helper Script(string scriptFile, string area = "")
+{
+    var loc = (area == "") ? "/Content/Scripts/" + scriptFile : "/Areas/" + @area + "/Scripts/" + scriptFile;
+    <script type="text/javascript" src="@loc"></script>
+}
+
+
+@helper jQuery(bool useGoogle = true)
+{
+    if (useGoogle)
+    {
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/jquery-ui.min.js"
+        type="text/javascript"></script>
+    }
+    else
+    {
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.5.1.js" type="text/javascript"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.10/jquery-ui.js" type="text/javascript"></script>
+    }
+}
+
+@helper jQueryTools()
+{
+    <script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
+}
+
+@helper jQueryUi()
+{
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"> </script>
+}

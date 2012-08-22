@@ -1,0 +1,21 @@
+﻿
+
+<div id="CategoryPartial" style="min-height: 100px">
+    <form data-bind="submit: addCategory">
+        Add Category: <input data-bind="value: newCategoryText" placeholder="New Category?" />
+        <button type="submit">Add</button>
+    </form>
+
+    <ul data-bind="foreach: categories, visible: categories().length > 0">
+        <li> 
+            <input data-bind="value: name" />
+            <a href="#" data-bind="click: $parent.removeCategory">Delete</a>
+        </li>
+    </ul>
+     
+
+    <button data-bind="click: save">Save</button>
+    <button data-bind="click: cancel">Cancel</button>
+
+
+</div>

@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+
+
+
+
+
+ 
+@section AdminPanel
+{
+    @if (ViewBag.HasAdminPanel)
+    {
+        @*<div id="adminPanelButtons">
+            <a id="panelHide" class=" hand panelButton">Hide Panels</a>
+            <a id="panelShow" class=" hand panelButton hidden">Show Panels</a>
+        </div>*@
+
+        <div id="adminPanel" class=""> 
+            <span class="bold">Detail</span><div id="DetailPartialTop" class="partialTop"> 
+                @Html.Partial("DetailPartial")     
+            </div> 
+            <span class="bold">Region</span><div id="RegionPartialTop" class="partialTop"> 
+                @Html.Partial("RegionPartial")   
+            </div> 
+            <span class="bold">TagCloud</span><div id="TagCloudPartialTop" class="partialTop"> 
+                @Html.Partial("TagCloudPartial") 
+            </div>
+        </div>
+    }
+}
+ 
+ 
+@section AdminPanelScripts
+{ 
+    @if (ViewBag.HasAdminPanel)
+    {   
+        @Assets.Script(scriptFile: "DetailPartial.js", area: "Articles")   
+        @Assets.Script(scriptFile: "RegionPartial.js", area: "Articles")  
+        @Assets.Script(scriptFile: "TagCloudPartial.js", area: "Articles")         
+    } 
+ }
+
+

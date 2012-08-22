@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Tasks";
+}
+
+<h2>Tasks</h2>
+
+
+@Html.Partial("TaskPartial")   
+
+
+
+
+@section Javascript
+{
+    
+    <script src="../../Scripts/knockout-2.1.0.debug.js" type="text/javascript"></script>
+    @Assets.Script(scriptFile: "TaskPartial.js", area: "Knockout")   
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,151 @@
+﻿
+
+@helper Scripts()
+    {
+    @Assets.CSS("plugins/buttons/screen.css")
+    @Assets.Script("jquery.validate.min.js")
+    @Assets.Script("jquery.validate.unobtrusive.min.js")
+}
+@helper ValidationMessage(string name)
+    {
+    <span class="field-validation-valid" data-valmsg-for="@name" data-valmsg-replace="true"></span>
+}
+@helper TextBox(string name, object value = null, string labelText = null, object containerClass = null, object lblClass = null, object txtfldClass = null, int maxLength = 50)
+    {
+    var val = value ?? "";
+    var label = labelText ?? name;
+    <div class="@containerClass" >
+        <label class="@lblClass" for="@name">@label</label><br />
+        <input type="text" name="@name" id="@name" value="@val"  data-val="true" class="@txtfldClass" maxlength="@maxLength" />
+    </div> 
+}
+
+@helper TextBoxPassword(string name, object value = null)
+    {
+        var val = "";
+    <div>
+        <label for="@name">@name</label>
+        <input type="password" name="@name" id="@name" />
+    </div>
+}
+
+@helper Label(string name, object value = null)
+    {
+        var val = value ?? "";
+    <div>
+        <label class="label" for="@name">@name:</label>
+        <label class="value">@val</label> 
+    </div>
+}
+
+@helper TextBoxRequired(string name, object value = null, string labelText = null, object containerClass = null, object lblClass = null, object txtfldClass = null, int maxLength = 50)
+    {
+        var val = value ?? "";
+        var label = labelText ?? name;
+    <div class="@containerClass">
+        <label  class="@lblClass" for="@name">@label *</label>
+        <input type="text" name="@name" id="@name" value="@val" maxlength="@maxLength" class="@txtfldClass" data-val="true" data-val-required="*" />
+        @ValidationMessage(name)
+    </div> 
+}
+
+@helper TextBoxEmail(string name, object value = null, string labelText = null, object containerClass = null, object lblClass = null, object txtfldClass = null, string emailMessage = "Invalid Email", string requiredMessage = "", int maxLength = 50)
+    {
+        var val = value ?? "";
+        var label = labelText ?? name;
+        var reqMessage = (requiredMessage == "") ? label.Replace(":", "") + " is Required " : requiredMessage;
+    <div class="@containerClass" >
+        <label class="@lblClass" for="@name">* @label</label>
+        <input type="text" name="@name" id="@name" value="@val" maxlength="@maxLength" data-val="true" class="@txtfldClass"  data-val-email="@emailMessage" data-val-required="@reqMessage"  />
+        @ValidationMessage(name)
+    </div>
+    
+}
+
+@helper TextBoxNumber(string name, object value = null, string numberMessage = "*Must be a number", int maxLength = 50, object myClass = null, object lblClass = null, object containerClass = null)
+    {
+        var val = value ?? "";
+    <div class="@containerClass">
+        <label class="@lblClass">@name *</label>
+        <input type="text" name="@name" id="@name" value="@val" maxlength="@maxLength" data-val="true" data-val-required="*" data-val-number="@numberMessage" class="@myClass" />
+        <span class="error">@ValidationMessage(name)</span>
+    </div>
+    
+}
+@helper TextArea(string name, string attributes = "", object value = null)
+    {
+        var val = value ?? "";
+    <div>
+        <label>@name</label>
+        <textarea name="@name" id="@name" @attributes >@val</textarea>
+    </div>
+}
+@helper Submit(string value = "Save",  object myClass = null)
+    {
+      Button(value, "submit", myClass);
+}
+@helper Button(string value = "Save", string type = "", object myClass = null)
+    {
+    var typeAttr = (type == "") ? "" : "type='" + type + "'";
+    <div>
+        <button @typeAttr class="button positive @myClass">
+            @value
+        </button>
+    </div>
+    <div class="clear"></div>
+}
+ 
+@helper HiddenID(object id)
+    {
+    <input type="hidden" name="ID" id="ID" value="@id" />
+}
+
+@helper CheckBox(string name, string labelText = null, object myClass = null, object lblClass = null, object containerClass = null, bool? isChecked = false)
+    { 
+        var c = "";
+        if (isChecked == true)
+        {
+            c = "checked='checked'";
+        }
+        
+    <div class="@containerClass" >
+        <label class="lblClass">@labelText</label>
+        <input type="checkbox" name="@name" id="@name" value="true" class="myClass" @c /> 
+    </div> 
+} 
+
+@helper DropDownNumber(string name, object value = null, string labelText = null, object myClass = null, int startNumber = 1, int endNumber = 10)
+    {
+    IDictionary<string, string> dictionary = new Dictionary<string, string>();
+    for (int i = startNumber; i <= endNumber; i++)
+    {
+        dictionary.Add(i.ToString(), i.ToString());
+    }
+    <p class="@myClass" >
+    <label>@labelText</label>
+
+    <select name="@name">
+    <option value="">-- Select --</option>
+    @foreach (var i in dictionary)
+    {
+        <option value="@i.Key">@i.Value</option>
+            
+    } 
+    </select> 
+    </p>
+}
+
+@helper ReCaptcha(string publicKey, string privateKey)
+    {
+    
+ 		<div class="recaptchaContainer">
+            <recaptcha:RecaptchaControl
+            ID="recaptcha"
+            Theme="clean"
+            runat="server"
+            OverrideSecureMode="true"
+            PublicKey="publicKey"
+            PrivateKey="privateKey"
+            />
+        </div>
+}

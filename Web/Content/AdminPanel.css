@@ -1,0 +1,31 @@
+﻿/* Admin Panel Styling */
+
+#adminPanel  { width: 330px; position: absolute; right: 0px; top: 30px; padding:10px; z-index: 9998; background: #eeeeee;
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2VlZWVlZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNjY2NjY2MiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(left,  #eeeeee 0%, #cccccc 100%);
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,#eeeeee), color-stop(100%,#cccccc));
+background: -webkit-linear-gradient(left,  #eeeeee 0%,#cccccc 100%);
+background: -o-linear-gradient(left,  #eeeeee 0%,#cccccc 100%);
+background: -ms-linear-gradient(left,  #eeeeee 0%,#cccccc 100%);
+background: linear-gradient(left,  #eeeeee 0%,#cccccc 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=1 );
+border:1px solid #ddd; border-bottom-left-radius: 15px; -moz-border-bottom-left-radius: 15px; border-top-left-radius: 15px; -moz-border-top-left-radius: 15px; -webkit-box-shadow: 0px 0px 22px rgba(50, 50, 50, 0.15);
+-moz-box-shadow:    0px 0px 22px rgba(50, 50, 50, 0.15);
+box-shadow:         0px 0px 22px rgba(50, 50, 50, 0.15);}
+#adminPanel h4 {font-size:16px; font-weight:bold; float:left; border-bottom:1px solid #666; width:310px; color:#444; margin-bottom:5px;}
+.bold {font-weight:bold;}
+
+.partialTop { border-bottom:grey solid  1px; min-height: 50px; }
+
+.collapser {
+    background: url("../Images/collapser.png") no-repeat scroll left top transparent;
+    cursor: pointer;
+    display: block;
+    float: right;
+    height: 20px;
+    text-indent: -9999px;
+    width: 20px;
+}
+.collapser.expanded{
+    background: url("../Images/collapser-expanded.png") no-repeat scroll left top transparent; 
+}

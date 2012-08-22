@@ -1,0 +1,18 @@
+﻿
+
+<div id="TagPartial" style="min-height: 100px">
+    <form data-bind="submit: addTag">
+        Add Tag: <input id="txtTag" data-bind="value: newTagText" placeholder="what tag do you want?" />
+        <button type="submit">Add</button>
+    </form>
+     
+    <ul data-bind="foreach: existingtags(), visible: existingtags().length > 0">
+        <li>   
+            <label data-bind="text: name " ></label>     
+            <a href="#" data-bind="click: $parent.removeTag">Delete</a>
+        </li>
+    </ul>
+    <button data-bind="click: cancel">Cancel</button>
+
+
+</div>

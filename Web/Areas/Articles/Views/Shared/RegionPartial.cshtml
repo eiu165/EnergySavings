@@ -1,0 +1,34 @@
+﻿@model   IEnumerable<Web.Areas.Articles.Controllers.RegionPartialModel >
+
+
+
+@if (@Model == null)
+{ 
+    <span  id="RegionPartial"  class="hand partialLoad collapser">  show </span>  
+}
+else
+{  
+    <span class="hand collapser expanded "> hide </span>   
+    <table >
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                IsInCategory
+            </th>
+            <th>
+                IsPrimary
+            </th>
+        </tr>
+        @foreach (var r in Model)
+        { 
+            <tr>
+                <td>@r.Name</td>   
+                <td>@r.IsInCategory</td>  
+                <td>@r.IsPrimary</td>   
+            </tr>                  
+        }
+    </table>
+} 
+ 

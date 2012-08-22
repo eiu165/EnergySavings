@@ -1,0 +1,31 @@
+﻿@model Web.Areas.Articles.Controllers.DetailPartialModel
+
+
+
+
+@if (@Model == null)
+{ 
+    <span  id="DetailPartial"  class="hand partialGet collapser">  show </span>  
+}
+else
+{  
+    <span class="hand collapser expanded "> hide </span> 
+    <div>  
+        <table >
+            <tr><td>Name</td><td>@Model.Name</td></tr>
+            <tr><td>Title</td><td>@Model.Title</td></tr>
+            <tr><td>Url</td><td>@Model.Url</td></tr>
+            <tr><td>Lock</td><td>@Model.Lock</td></tr> 
+            <tr><td>LockedBy</td><td>@Model.LockedBy</td></tr>
+            <tr><td>Status</td><td>@Model.Status</td></tr>
+            <tr><td>AssignedTo</td><td>@Model.AssignedTo</td></tr>
+        </table>
+        @Form.TextBox(name: "name", labelText: "Name", value: Model.Name, txtfldClass: "DetailPartial-Name") 
+        @Form.TextBox(name: "Title", labelText: "Title", value: Model.Title, txtfldClass: "DetailPartial-Title") 
+        @Form.TextBox(name: "Url", labelText: "Url", value: Model.Url, txtfldClass: "DetailPartial-Url") 
+        @Form.Button(value: "Add", myClass: "partialPost")    
+    </div> 
+} 
+
+ 
+ 
