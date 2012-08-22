@@ -16,6 +16,7 @@ namespace Web.Areas.Knockout.Controllers
         public int year { get; set; }
         public float day { get; set; }
         public float week { get; set; }
+        public float month { get; set; }
     }
 
     public class InputController : Controller
@@ -40,7 +41,7 @@ namespace Web.Areas.Knockout.Controllers
         private IQueryable<ResultViewModel>  GetResults()
         {
             var l = new List<ResultViewModel>();
-            l.Add(new ResultViewModel { day = 2, week = 3, year = 3 });
+            l.Add(new ResultViewModel { day = 2, week = 3, year = 3, month = 3 });
             //l.Add(new TaskViewModel { title = "Wire the money to Panama", isDone = false }); 
             return l.Where(x => true).AsQueryable(); 
         }
