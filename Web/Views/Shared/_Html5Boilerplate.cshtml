@@ -28,7 +28,7 @@
     <div id="container">
         <header>
             <div id="title">
-                <h1>My MVC Application</h1>
+                <h1>Energy Savings Calculator</h1>
             </div>
 
             <div id="logindisplay">
@@ -37,13 +37,8 @@
 
             <div id="menucontainer">
 
-                <ul id="menu">
-                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { })</li>
-                    <li>@Html.ActionLink("About", "About", "Home", new { area = "" }, new { })</li>
-                    <li>@Html.ActionLink("Articles", "Index", "Articles", new { area = "Knockout" }, new { })</li>
-                    <li>@Html.ActionLink("Tasks", "Both", "Main", new { area = "Knockout" }, new { })</li>
-                    <li>@Html.ActionLink("Tags", "Tags", "Main", new { area = "Knockout" }, new { })</li>
-                    <li>@Html.ActionLink("Admin Panel", "Index", "Page", new { area = "Articles" }, new { })</li> 
+                <ul id="menu"> 
+                    <li>@Html.ActionLink("Input", "Index", "Input", new { area = "Knockout" }, new { })</li> 
                 </ul>
             </div>
         </header>

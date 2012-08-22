@@ -51,6 +51,7 @@
     <Compile Include="Model\Article.cs" />
     <Compile Include="Model\ArticleTag.cs" />
     <Compile Include="Model\Category.cs" />
+    <Compile Include="Model\Input.cs" />
     <Compile Include="Model\Tag.cs" />
     <Compile Include="Model\Entity.cs" />
     <Compile Include="Model\Task.cs" />
