@@ -18,11 +18,11 @@
 
     <table>
     <tr>    <th>years</th><th>months</th><th>weeks</th><th>days</th>    </tr>
-    <tr  data-bind="foreach: existingresults()>
-        <td data-bind="test: years"></td>
-        <td data-bind="test: months"></td>
-        <td data-bind="test: weeeks"></td>
-        <td data-bind="test: days"></td>
+    <tr  data-bind="foreach: results(), visible: results().length > 0">
+        <td data-bind="text: year"></td>
+        <td data-bind="text: month"></td>
+        <td data-bind="text: week"></td>
+        <td data-bind="text: day"></td>
     </tr>
     </table>
 
