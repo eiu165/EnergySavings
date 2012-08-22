@@ -3,11 +3,10 @@ $(function () {
 
     function Result(data) {
         this.year = ko.observable(data.year);
-        this.annualHours = ko.observable(data.annualHours);
-        this.hours = ko.observable(data.hours);
-        this.month = ko.observable(data.month);
-        this.day = ko.observable(data.day);
-        this.week = ko.observable(data.week);
+        this.annual = ko.observable(data.annual);
+        this.weekly = ko.observable(data.weekly);
+        this.daily = ko.observable(data.daily);
+        this.percent = ko.observable(data.percent);
     }
 
     function InputViewModel() {

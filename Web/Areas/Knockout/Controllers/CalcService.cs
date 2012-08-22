@@ -10,20 +10,22 @@ namespace Web.Areas.Knockout.Controllers
         public static ResultViewModel GetResultViewModel(float year, InputViewModel input)
         {
             var r = new ResultViewModel();
-            r.year = year;
-            r.annualHours = GetAnnualHours(year, input);
-            r.day = 3;
-            r.week = 3;
-            r.month = 2;
+            r.year = year; 
+            var hoursPerYear = input.weeks*input.days*input.hours;
+            var annual = Getannual(year, input);
+            r.annual = Math.Round(annual, 0);
+            r.weekly = Math.Round(annual / input.weeks, 0);
+            r.daily = Math.Round(r.weekly / input.days, 2);
+            r.percent = Math.Round((annual * 100) / hoursPerYear, 2);
             return r; 
         }
 
 
-        private static float GetAnnualHours(float years, InputViewModel input)
+        private static float Getannual(float years, InputViewModel input)
         {
             var totalkw = input.kw * input.qty;
-            float hours = input.cost / (years * totalkw * input.rate);
-            return hours;
+            float annual = input.cost / (years * totalkw * input.rate);
+            return annual;
         }
 
     }

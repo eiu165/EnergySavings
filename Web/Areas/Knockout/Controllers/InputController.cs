@@ -15,16 +15,16 @@ namespace Web.Areas.Knockout.Controllers
         public float cost { get; set; }
         public float weeks { get; set; }
         public float days { get; set; }
+        public float annual { get; set; }
         public float hours { get; set; } 
     } 
     public class ResultViewModel
     {
-        public float year { get; set; }
-        public float annualHours { get; set; }
-        public float hours { get; set; }
-        public float day { get; set; }
-        public float week { get; set; }
-        public float month { get; set; }
+        public double year { get; set; }
+        public double annual { get; set; }
+        public double weekly { get; set; }
+        public double daily { get; set; }
+        public double percent { get; set; }  
     }
 
     public class InputController : Controller
@@ -48,11 +48,16 @@ namespace Web.Areas.Knockout.Controllers
         private IQueryable<ResultViewModel> GetResults(InputViewModel input)
         {
             var l = new List<ResultViewModel>();
-            l.Add(CalcService.GetResultViewModel(year: 1, input: input));
-            l.Add(CalcService.GetResultViewModel(year: 2, input: input));
-            l.Add(CalcService.GetResultViewModel(year: 3, input: input));
-            l.Add(CalcService.GetResultViewModel(year: 4, input: input));
-            l.Add(CalcService.GetResultViewModel(year: 5, input: input));
+            l.Add(CalcService.GetResultViewModel(year: 1.0f, input: input));
+            l.Add(CalcService.GetResultViewModel(year: 1.5f, input: input));
+            l.Add(CalcService.GetResultViewModel(year: 2.0f, input: input));
+            l.Add(CalcService.GetResultViewModel(year: 2.5f, input: input));
+            l.Add(CalcService.GetResultViewModel(year: 3.0f, input: input));
+            l.Add(CalcService.GetResultViewModel(year: 3.5f, input: input));
+            l.Add(CalcService.GetResultViewModel(year: 4.0f, input: input));
+            l.Add(CalcService.GetResultViewModel(year: 4.5f, input: input));
+            l.Add(CalcService.GetResultViewModel(year: 5.0f, input: input));
+            l.Add(CalcService.GetResultViewModel(year: 5.5f, input: input));
             return l.Where(x => true).AsQueryable(); 
         }
 
