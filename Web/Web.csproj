@@ -110,6 +110,7 @@
     </Content>
     <Content Include="Areas\Knockout\Scripts\CategoryPartial.js" />
     <Content Include="Areas\Knockout\Scripts\ArticlePartial.js" />
+    <Content Include="Areas\Knockout\Scripts\InputPartial.js" />
     <Content Include="Areas\Knockout\Scripts\TagPartial.js" />
     <Content Include="Areas\Knockout\Scripts\TaskPartial.js" />
     <Content Include="Content\AdminPanel.css" />
