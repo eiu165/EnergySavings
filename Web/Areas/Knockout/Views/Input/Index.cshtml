@@ -7,23 +7,23 @@
 <div id="inputForm" class="form">
 
     <div><label>fixture qty in zone</label><input type="text" id="qty-in-zone"  data-bind="value: qty" /></div> 
-    <div><label>kw per fixure</label><input type="text" id="kw-per-fixture" /></div>
-    <div><label>utility rate</label><input type="text" id="utility-rate" /></div> 
-    <div><label>estimated-sell-cost</label><input type="text" id="estimated-sell-cost" /></div> 
-    <div><label>weeks-per-year</label><input type="text" id="weeks-per-year" /></div> 
-    <div><label>days-per-week</label><input type="text" id="days-per-week" /></div> 
-    <div><label>hours-per-day</label><input type="text" id="hours-per-day" /></div> 
+    <div><label>kw per fixure</label><input type="text" id="kw-per-fixture"   data-bind="value: kw" /></div>
+    <div><label>utility rate</label><input type="text" id="utility-rate"    data-bind="value: rate" /></div> 
+    <div><label>estimated-sell-cost</label><input type="text" id="estimated-sell-cost"    data-bind="value: cost" /></div> 
+    <div><label>weeks-per-year</label><input type="text" id="weeks-per-year"   data-bind="value: weeks" /></div> 
+    <div><label>days-per-week</label><input type="text" id="days-per-week"     data-bind="value: days"/></div> 
+    <div><label>hours-per-day</label><input type="text" id="hours-per-day"    data-bind="value: hours" /></div> 
 
     <button data-bind="click: calc">calc</button>
 
-    <table>
-    <tr>    <th>years</th><th>months</th><th>weeks</th><th>days</th>    </tr>
-    <tr  data-bind="foreach: results(), visible: results().length > 0">
-        <td data-bind="text: year"></td>
-        <td data-bind="text: month"></td>
-        <td data-bind="text: week"></td>
-        <td data-bind="text: day"></td>
-    </tr>
+    <table>         
+        <tr><th>years</th><th>months</th><th>weeks</th><th>days</th></tr>
+        <tr data-bind="foreach: results(), visible: results().length > 0" >
+            <td data-bind="text: year"></td>
+            <td data-bind="text: month"></td>
+            <td data-bind="text: week"></td>
+            <td data-bind="text: day"></td>
+        </tr>
     </table>
 
 
