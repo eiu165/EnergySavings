@@ -6,7 +6,7 @@ $(function () {
         this.annual = ko.observable(data.annual);
         this.weekly = ko.observable(data.weekly);
         this.daily = ko.observable(data.daily);
-        this.percent = ko.observable(data.percent);
+        this.percent = ko.observable(data.percent)  ;
     }
 
     function InputViewModel() {
