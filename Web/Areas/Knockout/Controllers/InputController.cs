@@ -19,7 +19,8 @@ namespace Web.Areas.Knockout.Controllers
     } 
     public class ResultViewModel
     {
-        public int year { get; set; }
+        public float year { get; set; }
+        public float annualHours { get; set; }
         public float hours { get; set; }
         public float day { get; set; }
         public float week { get; set; }
@@ -45,24 +46,15 @@ namespace Web.Areas.Knockout.Controllers
 
 
         private IQueryable<ResultViewModel> GetResults(InputViewModel input)
-        { 
+        {
             var l = new List<ResultViewModel>();
-            var years = 1;
-            var hours = GetHours(input, years);
-            l.Add(new ResultViewModel { year = 1, day = 2, week = 3, month = 3, hours = hours });
-
-
-            l.Add(new ResultViewModel { year = 2, day = 2, week = 3, month = 3, hours = GetHours(input, 2) });
-            l.Add(new ResultViewModel { year = 3, day = 2, week = 3, month = 3, hours = GetHours(input, 3) });
-            //l.Add(new TaskViewModel { title = "Wire the money to Panama", isDone = false }); 
+            l.Add(CalcService.GetResultViewModel(year: 1, input: input));
+            l.Add(CalcService.GetResultViewModel(year: 2, input: input));
+            l.Add(CalcService.GetResultViewModel(year: 3, input: input));
+            l.Add(CalcService.GetResultViewModel(year: 4, input: input));
+            l.Add(CalcService.GetResultViewModel(year: 5, input: input));
             return l.Where(x => true).AsQueryable(); 
         }
 
-        private static float GetHours(InputViewModel input, int years)
-        {
-            var totalkw = input.kw*input.qty;
-            float hours = input.cost/(years*totalkw*input.rate);
-            return hours;
-        }
     }
 }

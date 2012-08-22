@@ -84,6 +84,7 @@
     <Compile Include="Areas\Articles\Controllers\PageController.cs" />
     <Compile Include="Areas\Articles\Controllers\TagCloudPartialController.cs" />
     <Compile Include="Areas\Knockout\Controllers\ArticlesController.cs" />
+    <Compile Include="Areas\Knockout\Controllers\CalcService.cs" />
     <Compile Include="Areas\Knockout\Controllers\InputController.cs" />
     <Compile Include="Areas\Knockout\Controllers\MainController.cs" />
     <Compile Include="Areas\Knockout\KnockoutAreaRegistration.cs" />
