@@ -12,6 +12,7 @@ namespace Core.Persistence
         public DbSet<Article> Articles { get; set; }
         public DbSet<Tag> Tags { get; set; }
         public DbSet<ArticleTag> ArticleTags { get; set; }
+        public DbSet<Input> Inputs { get; set; }
 
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
