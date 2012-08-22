@@ -17,13 +17,16 @@
     <button data-bind="click: calc">calc</button>
 
     <table>         
-        <tr><th>years</th><th>months</th><th>weeks</th><th>days</th></tr>
-        <tr data-bind="foreach: results(), visible: results().length > 0" >
-            <td data-bind="text: year"></td>
-            <td data-bind="text: month"></td>
-            <td data-bind="text: week"></td>
-            <td data-bind="text: day"></td>
-        </tr>
+        <tr><th>years</th><th>hours</th><th>months</th><th>weeks</th><th>days</th></tr>
+        <tbody data-bind="foreach: results(), visible: results().length > 0">
+            <tr  >
+                <td data-bind="text: year"></td>
+                <td data-bind="text: hours"></td>
+                <td data-bind="text: month"></td>
+                <td data-bind="text: week"></td>
+                <td data-bind="text: day"></td>
+            </tr>
+        </tbody>
     </table>
 
 

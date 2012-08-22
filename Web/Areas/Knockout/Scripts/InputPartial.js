@@ -3,6 +3,7 @@ $(function () {
 
     function Result(data) {
         this.year = ko.observable(data.year);
+        this.hours = ko.observable(data.hours);
         this.month = ko.observable(data.month);
         this.day = ko.observable(data.day);
         this.week = ko.observable(data.week);
