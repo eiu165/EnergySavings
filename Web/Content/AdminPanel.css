@@ -29,3 +29,6 @@ box-shadow:         0px 0px 22px rgba(50, 50, 50, 0.15);}
 .collapser.expanded{
     background: url("../Images/collapser-expanded.png") no-repeat scroll left top transparent; 
 }
+
+#form>div{ padding:5px;}
+#form>div>label{ width:155px; display:block; float:left}
