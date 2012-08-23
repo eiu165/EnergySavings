@@ -218,9 +218,9 @@
     <Content Include="Areas\Knockout\Views\Main\Tags.cshtml" />
     <Content Include="Areas\Knockout\Views\Articles\Index.cshtml" />
     <Content Include="Areas\Knockout\Views\Shared\ArticlePartial.cshtml" />
-    <Content Include="Areas\Knockout\Views\Input\Index.cshtml" />
+    <Content Include="Areas\Knockout\Views\Input\IndexOld.cshtml" />
     <Content Include="Views\Shared\_TabletLayout.cshtml" />
-    <Content Include="Areas\Knockout\Views\Input\Index2.cshtml" />
+    <Content Include="Areas\Knockout\Views\Input\Index.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

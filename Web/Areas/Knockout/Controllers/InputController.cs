@@ -37,7 +37,7 @@ namespace Web.Areas.Knockout.Controllers
             return View();
         }
 
-        public ActionResult Index2()
+        public ActionResult IndexOld()
         {
             return View();
         }

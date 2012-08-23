@@ -1,22 +1,25 @@
 ﻿@{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Index2";
+    Layout = "~/Views/Shared/_TabletLayout.cshtml";
 }
-
-<h2>Input</h2>
 
 <div id="inputForm" class="form">
 
-    <div><label>fixture qty in zone</label><input type="text" id="qty-in-zone"  data-bind="value: qty" /></div> 
-    <div><label>kw per fixure</label><input type="text" id="kw-per-fixture"   data-bind="value: kw" /></div>
-    <div><label>utility rate</label><input type="text" id="utility-rate"    data-bind="value: rate" /></div> 
-    <div><label>estimated-sell-cost</label><input type="text" id="estimated-sell-cost"    data-bind="value: cost" /></div> 
-    <div><label>weeks-per-year</label><input type="text" id="weeks-per-year"   data-bind="value: weeks" /></div> 
-    <div><label>days-per-week</label><input type="text" id="days-per-week"     data-bind="value: days"/></div> 
-    <div><label>hours-per-day</label><input type="text" id="hours-per-day"    data-bind="value: hours" /></div> 
-
-    <button data-bind="click: calc">calc</button>
-
-    <table>         
+ 
+    <div class="left"   >
+        <div><label>fixture qty in zone</label><input   id="qty-in-zone" type="number"  data-bind="value: qty" /></div> 
+        <div><label>kw per fixure</label><input   id="kw-per-fixture"  type="number"  data-bind="value: kw" /></div>
+        <div><label>utility rate</label><input   id="utility-rate" type="number"   data-bind="value: rate" /></div> 
+    </div>
+    <div  class="right" style="width:60%" >
+        <div><label>estimated-sell-cost</label><input  id="estimated-sell-cost"  type="range"   min="0" max="100000"    data-bind="value: cost" /></div> 
+        <div><label>weeks-per-year</label><input  id="weeks-per-year" type="range"   min="0" max="52"   data-bind="value: weeks" /></div> 
+        <div><label>days-per-week</label><input   id="days-per-week"  type="range"   min="0" max="7"   data-bind="value: days"  /></div> 
+        <div><label>hours-per-day</label><input   id="hours-per-day"  type="range"   min="0" max="24"   data-bind="value: hours" /></div> 
+    </div>
+    <div class="clear"></div>
+        <button data-bind="click: calc">calc</button>
+    <table class="imagetable">         
         <tr><th>years</th><th>annual</th> <th>weekly</th><th>daily</th><th>percent</th></tr>
         <tbody data-bind="foreach: results(), visible: results().length > 0">
             <tr  >
@@ -39,3 +42,4 @@
     @Assets.Script(scriptFile: "InputPartial.js", area: "Knockout")   
 }
  
+

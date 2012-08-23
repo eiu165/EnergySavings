@@ -3,6 +3,34 @@
 
 }
 
-input.ui-input-text, textarea.ui-input-text  { width:100px;} 
+input.ui-input-text, textarea.ui-input-text  { width:110px;} 
 
 div.ui-slider { width: 40%;}
+
+.right { float:right;}
+.left { float:left;}
+.clear { clear:both;}
+#inputForm label {display:block;}
+
+
+ 
+table.imagetable { 
+	color:#333333;
+	border-width: 1px;
+	border-color: #999999;
+	border-collapse: collapse;
+}
+table.imagetable th {
+	background:#b5cfd2 ;
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #999999;
+}
+table.imagetable td {
+	background:#dcddc0 ;
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #999999;
+} 

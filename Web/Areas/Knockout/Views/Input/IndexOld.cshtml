@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Input</h2>
+
+<div id="inputForm" class="form">
+
+    <div><label>fixture qty in zone</label><input type="text" id="qty-in-zone"  data-bind="value: qty" /></div> 
+    <div><label>kw per fixure</label><input type="text" id="kw-per-fixture"   data-bind="value: kw" /></div>
+    <div><label>utility rate</label><input type="text" id="utility-rate"    data-bind="value: rate" /></div> 
+    <div><label>estimated-sell-cost</label><input type="text" id="estimated-sell-cost"    data-bind="value: cost" /></div> 
+    <div><label>weeks-per-year</label><input type="text" id="weeks-per-year"   data-bind="value: weeks" /></div> 
+    <div><label>days-per-week</label><input type="text" id="days-per-week"     data-bind="value: days"/></div> 
+    <div><label>hours-per-day</label><input type="text" id="hours-per-day"    data-bind="value: hours" /></div> 
+
+    <button data-bind="click: calc">calc</button>
+
+    <table>         
+        <tr><th>years</th><th>annual</th> <th>weekly</th><th>daily</th><th>percent</th></tr>
+        <tbody data-bind="foreach: results(), visible: results().length > 0">
+            <tr  >
+                <td data-bind="text: year"></td>
+                <td data-bind="text: annual"></td>
+                <td data-bind="text: weekly"></td>
+                <td data-bind="text: daily"></td>
+                <td data-bind="text: percent"></td> 
+            </tr>
+        </tbody>
+    </table>
+
+
+</div>
+
+
+@section Javascript
+{ 
+    <script src="/Scripts/knockout-2.1.0.debug.js" type="text/javascript"></script>
+    @Assets.Script(scriptFile: "InputPartial.js", area: "Knockout")   
+}
+ 
