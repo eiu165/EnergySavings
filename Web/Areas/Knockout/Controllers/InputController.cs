@@ -37,6 +37,11 @@ namespace Web.Areas.Knockout.Controllers
             return View();
         }
 
+        public ActionResult Index2()
+        {
+            return View();
+        }
+
 
         public JsonResult Calc(InputViewModel input)
         {
